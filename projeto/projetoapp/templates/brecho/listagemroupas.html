@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roupas</title>
+</head>
+<body>
+    <form action="{% url 'listagemroupas' %}" method="post">
+        <div style="text-align: center;" class="conteiner">
+            <h2>Cadastrar Roupa</h2><br>
+            Tamanho<input name="Tamanho" class="form-control-sm" type="text"><br>
+            FotoRoupa<input name="FotoRoupa" class="form-control-sm" type="image"><br>
+            Preco<input name="Preco" class="form-control-sm" type="number"><br>
+            Cor <input name="Cor" class="form-control-sm" type="text">
+            <button class="form-control-sm" type="submit">Concluir</button>
+        </div>
+    </form>
+</body>
+</html>

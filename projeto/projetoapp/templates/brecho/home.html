@@ -11,21 +11,15 @@
     <nav style="background-color: coral; text-align: center;" class="conteiner">Inicio
     </nav>
 
-    <div style="text-align: center;" class="conteiner">
-        <h1>Cadastar Cliente</h1><br>
-        Nome<input type="text"><br>
-        FotoCliente<input type="image"><br>
-        Datavenda<input type="date"><br>
-        <button class="form-control-sm" type="submit">Concluir</button>
-    </div>
-    
-    <div style="text-align: center;" class="conteiner">
-        <h2>Cadastrar Roupa</h2><br>
-        Tamanho<input class="form-control-sm" type="text"><br>
-        FotoRoupa<input class="form-control-sm" type="image"><br>
-        Preco<input class="form-control-sm" type="number"><br>
-        <button class="form-control-sm" type="submit">Concluir</button>
-    </div>
+    <form action="{% url 'listarclientes' %}" method="post">
+        <div style="text-align: center;" class="conteiner">
+            <h1>Cadastar Cliente</h1><br>
+            Nome<input name="nome" type="text"><br>
+            FotoCliente<input name="FotoCliente" type="image"><br>
+            Datavenda<input name="DataVenda" type="date"><br>
+            <button class="form-control-sm" type="submit">Concluir</button>
+        </div>
+    </form>
 
 </body>
 
