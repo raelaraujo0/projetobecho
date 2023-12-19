@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\pags.css">
+    <title>Roupas</title>
+</head>
+<body>
+    <header>
+        <nav class="inicio"><a href="{% url 'home' %}">Inicio</a>
+        </nav>
+    </header>
+    
+    <h2>Cadastrar Roupa</h2><br>
+
+    <form action="{% url 'listar_roupas' %}" method="post">
+        <div class="formulario">
+            Tamanho<input name="Tamanho" type="text"><br>
+            Foto da roupa<input name="FotoRoupa" type="file"><br>
+            Preco<input name="Preco" type="number"><br>
+            Cor <input name="Cor" type="text"><br>
+            <button type="submit">Concluir</button>
+        </div>
+    </form>
+</body>
+</html>

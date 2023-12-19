@@ -8,18 +8,20 @@
 </head>
 
 <body>
-    <nav style="background-color: coral; text-align: center;" class="conteiner">Inicio
+    <nav class="ini">Inicio
     </nav>
 
-    <form action="{% url 'listarclientes' %}" method="post">
-        <div style="text-align: center;" class="conteiner">
-            <h1>Cadastar Cliente</h1><br>
-            Nome<input name="nome" type="text"><br>
-            FotoCliente<input name="FotoCliente" type="image"><br>
-            Datavenda<input name="DataVenda" type="date"><br>
-            <button class="form-control-sm" type="submit">Concluir</button>
+    <button>
+        <div>
+            <a href="{% url 'listar_clientes' %}">Cliente</a>
         </div>
-    </form>
+    </button>
+
+    <button>
+        <div>
+            <a href="{% url 'listar_roupas' %}">Roupa</a>
+        </div>
+    </button>
 
 </body>
 
