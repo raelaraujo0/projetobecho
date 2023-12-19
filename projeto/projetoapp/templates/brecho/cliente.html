@@ -1,26 +1,39 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/pags.css' %}">
     <title>Cliente</title>
 </head>
+
 <body>
     <header>
-        <nav class="inicio"><a href="{% url 'home' %}">Inicio</a>
+        <nav class="inicio">
+            <a href="{% url 'home' %}">Inicio</a>
         </nav>
     </header>
 
-    <h1>Cadastar Cliente</h1><br>
-    
     <form action="{% url 'listar_clientes' %}" method="post">
         <div class="formulario">
-            Nome<input name="nome" type="text"><br>
-            Foto do cliente<input name="FotoCliente" type="file"><br>
-            Data da venda<input name="DataVenda" type="date"><br>
+            <h1>Cadastrar Cliente</h1><br>
+            
+            <label for="nome">Nome</label>
+            <input name="nome" type="text"><br>
+
+            <label for="FotoCliente">Foto do cliente</label>
+            <input name="FotoCliente" type="file"><br>
+
+            <label for="DataVenda">Data da venda</label>
+            <input name="DataVenda" type="date"><br>
+
             <button type="submit">Concluir</button>
         </div>
     </form>
 
 </body>
+
 </html>

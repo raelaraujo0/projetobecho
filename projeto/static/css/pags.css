@@ -1,0 +1,24 @@
+.inicio a {
+    display: block; 
+    padding: 20px 48.5%;
+    background-color: #3498db;
+    text-decoration: none;
+    color: black; 
+}
+
+.formulario {
+    color: #3498db;
+    text-align: center;
+    padding: 20px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #aae2ee;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 10px;
+}

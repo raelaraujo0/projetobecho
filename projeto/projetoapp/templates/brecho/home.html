@@ -1,28 +1,33 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>Brecho</title>
 </head>
 
 <body>
-    <nav class="ini">Inicio
-    </nav>
+    <header>
+        <nav class="ini">Inicio
+        </nav>
+    </header>
 
-    <button>
-        <div>
+    <div class="clicavel">
+        <button>
             <a href="{% url 'listar_clientes' %}">Cliente</a>
-        </div>
-    </button>
-
-    <button>
-        <div>
+        </button>
+    </div>
+    
+    <div class="clicavel">
+        <button>
             <a href="{% url 'listar_roupas' %}">Roupa</a>
-        </div>
-    </button>
-
+        </button>
+    </div>
+        
 </body>
 
 </html>
