@@ -19,6 +19,7 @@
 
     <form action="{% url 'listar_roupas' %}" method="post">
         <div class="formulario">
+            {% csrf_token %}
             <h2>Cadastrar Roupa</h2><br>
             <label for="Tamanho">Tamanho</label>
             <input name="Tamanho" type="text"><br>
