@@ -17,15 +17,12 @@
         </nav>
     </header>
 
-    <form action="{% url 'listar_clientes' %}" method="post">
+    <form action="{% url 'criar_cliente' %}" method="post">
         <div class="formulario">
             <h1>Cadastrar Cliente</h1><br>
             {% csrf_token %}
             <label for="nome">Nome</label>
             <input name="nome" type="text"><br>
-
-            <label for="FotoCliente">Foto do cliente</label>
-            <input name="FotoCliente" type="file"><br>
 
             <label for="DataVenda">Data da venda</label>
             <input name="DataVenda" type="date"><br>
@@ -35,5 +32,4 @@
     </form>
 
 </body>
-
 </html>

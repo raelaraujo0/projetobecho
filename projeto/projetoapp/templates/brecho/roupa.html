@@ -17,15 +17,12 @@
         </nav>
     </header>
 
-    <form action="{% url 'listar_roupas' %}" method="post">
+    <form action="{% url 'criar_roupa' %}" method="post">
         <div class="formulario">
             {% csrf_token %}
             <h2>Cadastrar Roupa</h2><br>
             <label for="Tamanho">Tamanho</label>
             <input name="Tamanho" type="text"><br>
-
-            <label for="FotoRoupa">Foto da roupa</label>
-            <input name="FotoRoupa" type="file"><br>
 
             <label for="Preco">Preco</label>
             <input name="Preco" type="number"><br>
@@ -37,5 +34,4 @@
         </div>
     </form>
 </body>
-
 </html>
