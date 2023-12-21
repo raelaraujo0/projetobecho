@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import get_object_or_404
+
 from .models import Cliente, Roupa
 
 def home(request):
@@ -11,11 +14,7 @@ def criar_cliente(request):
         novo_cliente.FotoCliente = request.POST.get('FotoCliente')
         novo_cliente.Datavenda = request.POST.get('DataVenda')
         novo_cliente.save()
-
-    return HttpResponse('Cliente Criado')
-
-    def __str__(self):
-        return self.nome
+        return HttpResponse('Cliente Criado')
     
 def criar_roupa(request):
     if request.method == 'POST':
@@ -25,21 +24,17 @@ def criar_roupa(request):
         nova_roupa.Cor = request.POST.get('Cor')
         nova_roupa.Preco = request.POST.get('Preco')
         nova_roupa.save()
-
-    return HttpResponse('Roupa Criada')
-
-    def __str__(self):
-        return self.roupa
-
-def excluir_cliente(request, id_cliente):
+        return HttpResponse('Roupa Criada')
+_
+def excluir_cliente(_, id_cliente):
     cliente = get_object_or_404(Cliente, pk=id_cliente)
     cliente.delete()
-    return Jsonresponse({'message: Cliente excluido'})
+    return JsonResponse({'message: Cliente excluido'})
 
-def excluir_roupa(request, id_roupa):
+def excluir_roupa(_, id_roupa):
     roupa = get_object_or_404(Roupa, pk=id_roupa)
     roupa.delete()
-    return Jsonresponse({'message: Roupa deletada'})
+    return JsonResponse({'message: Roupa deletada'})
 
 def listartudo(request):
     clientes = Cliente.objects.all()
