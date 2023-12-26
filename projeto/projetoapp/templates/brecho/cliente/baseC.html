@@ -5,26 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/pags.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>Opcoes</title>
 </head>
 <body>
     <header>
-        <nav class="inicio">
+        <nav class="ini">
             <a href="{% url 'home' %}">Inicio</a>
         </nav>
     </header>
 
     <div class="clicavel">
         <button>
-            <a href="{% url 'criar_cliente' %}"></a>
+            <a href="{% url 'criar_cliente' %}"> Criar Cliente</a>
         </button>
 
         <button>
-            <a href="{% url 'excluir_cliente' %}"></a>
+            <a href="{% url 'excluir_cliente' %}"> Deletar Cliente</a>
         </button>
     </div>
-
     
 </body>
 </html>

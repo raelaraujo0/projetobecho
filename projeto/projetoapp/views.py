@@ -25,14 +25,14 @@ def criar_cliente(request):
 
     return render(request, 'brecho/cliente/cliente.html', {'form': form})
     
-def excluir_cliente(request, idcliente):
-    cliente = get_object_or_404(Cliente, pk=idcliente)
-    
+def excluir_cliente(request):
     if request.method == 'POST':
+        idcliente = request.POST.get('idcliente')
+        cliente = get_object_or_404(Cliente, pk=idcliente)
         cliente.delete()
         return JsonResponse({'message': 'Cliente excluído'})
     
-    return render(request, 'brecho/cliente/excluircliente.html', {'cliente': cliente})
+    return redirect('excluir_cliente')
 
 
 def criar_roupa(request):
@@ -46,14 +46,14 @@ def criar_roupa(request):
 
     return render(request, 'brecho/roupa/roupa.html', {'form': form})
 
-def excluir_roupa(request, idroupa):
-    roupa = get_object_or_404(Roupa, pk=idroupa)
-    
+def excluir_roupa(request):
     if request.method == 'POST':
+        idroupa = request.POST.get('idroupa')
+        roupa = get_object_or_404(Roupa, pk=idroupa)
         roupa.delete()
-        return JsonResponse({'message': 'Roupa deletada'})
+        return JsonResponse({'message': 'Roupa excluida'})
     
-    return render(request, 'brecho/roupa/excluirroupa.html', {'roupa': roupa})
+    return redirect('excluir_roupa')
 
 def listartudo(request):
     clientes = Cliente.objects.all()

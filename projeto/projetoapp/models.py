@@ -2,8 +2,8 @@ from django.db import models
 
 class Cliente(models.Model):
     idcliente = models.AutoField(primary_key=True)
-    nome = models.CharField(max_length = 50)
-    Datavenda = models.DateField()
+    Nome = models.CharField(max_length = 50)
+    DataVenda = models.DateField()
 
     def __str__(self):
         return self.nome

@@ -8,14 +8,15 @@
 <body>
     {% extends 'brecho/base.html' %}
     {% block content %}
-    <h2>Confirmação de exclusão</h2>
-    <p>Você tem certeza que deseja excluir o cliente "{{ cliente.nome }}"?</p>
-    
-    <form method="post">
+    <h2>Opções de Exclusão de Cliente</h2>
+    <p>Informe o ID do cliente que deseja excluir:</p>
+    <form method="post" action="{% url 'excluir_cliente' %}">
         {% csrf_token %}
-        <button type="submit">Confirmar exclusão</button>
+        <label for="idcliente">ID do Cliente:</label>
+        <input type="number" name="idcliente" required>
+        <button type="submit">Excluir Cliente</button>
     </form>
-    <a href="{% url 'listartudo' %}">Cancelar</a>
+    <a href="{% url 'home' %}">Cancelar</a>
     {% endblock %}
 
 </body>

@@ -20,14 +20,11 @@
     <form action="{% url 'criar_cliente' %}" method="post">
         <div class="formulario">
             <h1>Cadastrar Cliente</h1><br>
-            {{ form.as_p }}
             {% csrf_token %}
-            <label for="nome">Nome</label>
-            <input name="nome" type="text">
-
-            <label for="Datavenda">Data da venda</label>
-            <input name="Datavenda" type="date">
-
+            <label for="Nome">Nome:</label>
+            {{ form.Nome }}
+            <label for="DataVenda">Data da venda:</label>
+            {{ form.DataVenda }} <br>
             <button type="submit">Concluir</button>
         </div>
     </form>

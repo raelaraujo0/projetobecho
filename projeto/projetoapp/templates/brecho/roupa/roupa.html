@@ -21,18 +21,15 @@
         <div class="formulario">
             <h2>Cadastrar Roupa</h2><br>
             {% csrf_token %}
-            {{ form.as_p }}
-            <label for="Tamanho">Tamanho</label>
-            <input name="Tamanho" type="text"><br>
-
-            <label for="Preco">Preco</label>
-            <input name="Preco" type="number"><br>
-
-            <label for="Cor">Cor</label>
-            <input name="Cor" type="text"><br>
-
+            <label for="Tamanho">Tamanho:</label>
+            {{ form.Tamanho }}
+            <label for="Preco">Preço:</label>
+            {{ form.Preco }}
+            <label for="Cor">Cor:</label>
+            {{ form.Cor }} <br>
             <button type="submit">Concluir</button>
         </div>
     </form>
+    
 </body>
 </html>

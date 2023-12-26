@@ -10,10 +10,10 @@ urlpatterns = [
     path('opcaoroupas/', views.opcoesrou, name='opcoesrou'),
 
     path('cliente/', views.criar_cliente, name='criar_cliente'),
-    path('cliente/excluir/<int:idcliente>/', views.excluir_cliente, name='excluir_cliente'),
+    path('cliente/excluircliente', views.excluir_cliente, name='excluir_cliente'),
 
     path('roupa/', views.criar_roupa, name='criar_roupa'),
-    path('roupa/excluir/<int:idroupa>/', views.excluir_roupa, name='excluir_roupa'),
+    path('roupa/excluirroupa', views.excluir_roupa, name='excluir_roupa'),
 
     path('listagem/', views.listartudo, name='listartudo'),
 ]

@@ -1,7 +1,9 @@
-header {
+.ini a {
+    display: block; 
+    padding: 20px 48.5%;
     background-color: #848484;
-    padding: 20px;
-    text-align: center;
+    text-decoration: none;
+    color: black; 
 }
 
 html, body {
@@ -25,6 +27,7 @@ html, body {
 }
 
 .clicavel button:hover {
+    text-decoration: none;
     background-color: #848484;
     color: white;
 }
