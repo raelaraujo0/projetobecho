@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem</title>
 </head>
+
 <body>
 
-    <h1>Listagem de Pessoas</h1>
-    <ul>
-        {% for Cliente in clientes %}
-        <li><p>{{ pessoa.id_cliente}} - {{ cliente.nome }} - {{ cliente.Datavenda }}</p></li>
-        {% endfor %}
-    </ul>
+    <div class="list">
+        <h1>Listagem de Pessoas</h1>
+        <ol>
+            {% for Cliente in clientes %}
+            <li>
+                <p>{{ pessoa.id_cliente}} - {{ cliente.nome }} - {{ cliente.Datavenda }}</p>
+            </li>
+            {% endfor %}
+        </ol>
 
-    <h1>Listagem de Roupas</h1>
-    <ul>
-        {% for roupa in Roupas %}
-        <li><p>{{ roupa.tamanho }} - {{ roupa.preco }} - {{ roupa.cor }}</p></li>
-        {% endfor %}
-    </ul>
+        <h1>Listagem de Roupas</h1>
+        <ol>
+            {% for roupa in Roupas %}
+            <li>
+                <p>{{ roupa.tamanho }} - {{ roupa.preco }} - {{ roupa.cor }}</p>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+
 </body>
+
 </html>

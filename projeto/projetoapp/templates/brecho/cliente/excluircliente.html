@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir cliente</title>
+</head>
+<body>
+    {% extends 'brecho/base.html' %}
+    {% block content %}
+    <h2>Confirmação de exclusão</h2>
+    <p>Você tem certeza que deseja excluir o cliente "{{ cliente.nome }}"?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar exclusão</button>
+    </form>
+    <a href="{% url 'listartudo' %}">Cancelar</a>
+    {% endblock %}
+
+</body>
+</html>

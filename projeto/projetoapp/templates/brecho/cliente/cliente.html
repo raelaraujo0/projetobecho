@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/pags.css' %}">
-    <title>Roupas</title>
+    <title>Cliente</title>
 </head>
 
 <body>
@@ -17,21 +17,20 @@
         </nav>
     </header>
 
-    <form action="{% url 'criar_roupa' %}" method="post">
+    <form action="{% url 'criar_cliente' %}" method="post">
         <div class="formulario">
+            <h1>Cadastrar Cliente</h1><br>
+            {{ form.as_p }}
             {% csrf_token %}
-            <h2>Cadastrar Roupa</h2><br>
-            <label for="Tamanho">Tamanho</label>
-            <input name="Tamanho" type="text"><br>
+            <label for="nome">Nome</label>
+            <input name="nome" type="text">
 
-            <label for="Preco">Preco</label>
-            <input name="Preco" type="number"><br>
-
-            <label for="Cor">Cor</label>
-            <input name="Cor" type="text"><br>
+            <label for="Datavenda">Data da venda</label>
+            <input name="Datavenda" type="date">
 
             <button type="submit">Concluir</button>
         </div>
     </form>
+
 </body>
 </html>
