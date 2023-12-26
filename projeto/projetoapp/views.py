@@ -25,14 +25,14 @@ def criar_roupa(request):
         nova_roupa.Preco = request.POST.get('Preco')
         nova_roupa.save()
         return HttpResponse('Roupa Criada')
-_
-def excluir_cliente(_, id_cliente):
-    cliente = get_object_or_404(Cliente, pk=id_cliente)
+
+def excluir_cliente(request, idcliente):
+    cliente = get_object_or_404(Cliente, pk=idcliente)
     cliente.delete()
     return JsonResponse({'message: Cliente excluido'})
 
-def excluir_roupa(_, id_roupa):
-    roupa = get_object_or_404(Roupa, pk=id_roupa)
+def excluir_roupa(request, idroupa):
+    roupa = get_object_or_404(Roupa, pk=idroupa)
     roupa.delete()
     return JsonResponse({'message: Roupa deletada'})
 

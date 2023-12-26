@@ -1,13 +1,13 @@
 .inicio a {
     display: block; 
     padding: 20px 48.5%;
-    background-color: #3498db;
+    background-color: #848484;
     text-decoration: none;
     color: black; 
 }
 
 .formulario {
-    color: #3498db;
+    color: #848484;
     text-align: center;
     padding: 20px;
 }
@@ -15,7 +15,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    background-color: #aae2ee;
+    background-color: #ffffff;
 }
 
 .formulario label {
