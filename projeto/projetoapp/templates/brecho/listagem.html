@@ -16,26 +16,23 @@
         </nav>
     </header>
 
-    <div style="text-align: center;" class="list">
-        <h1>Listagem de Pessoas</h1>
+    <h1>Listagem de Pessoas</h1>
         <ol>
-            {% for clientes in Cliente %}
+            {% for cliente in clientes %}
             <li>
-                <p>{{ cliente.idcliente}} - {{ cliente.Nome }} - {{ cliente.DataVenda }}</p>
+                <p>{{ cliente.idcliente }} - {{ cliente.Nome }} - {{ cliente.DataVenda }}</p>
             </li>
             {% endfor %}
         </ol>
-
-        <h1>Listagem de Roupas</h1>
+    
+    <h1>Listagem de Roupas</h1>
         <ol>
-            {% for roupas in Roupa %}
+            {% for roupa in roupas %}
             <li>
                 <p>{{ roupa.idroupa }} - {{ roupa.Tamanho }} - {{ roupa.Preco }} - {{ roupa.Cor }}</p>
             </li>
             {% endfor %}
         </ol>
-    </div>
-
+    
 </body>
-
 </html>
