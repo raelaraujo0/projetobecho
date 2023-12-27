@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from .forms import ClienteForm, RoupaForm
 from .models import Cliente, Roupa
@@ -8,18 +8,19 @@ def home(request):
     return render(request, 'brecho/home.html')
 
 def opcoescli(request):
-    return render(request, 'brecho/cliente/baseC.html')
+    return render(request, 'brecho/cliente/opcoescliente.html')
 
 def opcoesrou(request):
-    return render(request, 'brecho/roupa/baseR.html')
+    return render(request, 'brecho/roupa/opcoesroupa.html')
 
+## DIVISAO ENTRE HOME E MODULOS
 
 def criar_cliente(request):
     if request.method == 'POST':
         form = ClienteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('criar_cliente')
     else:
         form = ClienteForm()
 
@@ -30,17 +31,18 @@ def excluir_cliente(request):
         idcliente = request.POST.get('idcliente')
         cliente = get_object_or_404(Cliente, pk=idcliente)
         cliente.delete()
-        return JsonResponse({'message': 'Cliente excluído'})
+        return HttpResponse({'message': 'Cliente excluído'})
     
-    return redirect('excluir_cliente')
+    return render(request, 'brecho/cliente/excluircliente.html')
 
+## DIVISAO ENTRE CLIENTES E ROUPAS
 
 def criar_roupa(request):
     if request.method == 'POST':
         form = RoupaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('criar_roupa')
     else:
         form = RoupaForm()
 
@@ -51,9 +53,11 @@ def excluir_roupa(request):
         idroupa = request.POST.get('idroupa')
         roupa = get_object_or_404(Roupa, pk=idroupa)
         roupa.delete()
-        return JsonResponse({'message': 'Roupa excluida'})
+        return HttpResponse({'message': 'Roupa excluida'})
     
-    return redirect('excluir_roupa')
+    return render(request, 'brecho/roupa/excluirroupa.html')
+
+######################
 
 def listartudo(request):
     clientes = Cliente.objects.all()

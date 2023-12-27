@@ -1,29 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>Listagem</title>
 </head>
 
 <body>
+    <header>
+        <nav class="ini">
+            <a href="{% url 'home' %}">Inicio</a>
+        </nav>
+    </header>
 
-    <div class="list">
+    <div style="text-align: center;" class="list">
         <h1>Listagem de Pessoas</h1>
         <ol>
-            {% for Cliente in clientes %}
+            {% for clientes in Cliente %}
             <li>
-                <p>{{ pessoa.id_cliente}} - {{ cliente.nome }} - {{ cliente.Datavenda }}</p>
+                <p>{{ cliente.idcliente}} - {{ cliente.Nome }} - {{ cliente.DataVenda }}</p>
             </li>
             {% endfor %}
         </ol>
 
         <h1>Listagem de Roupas</h1>
         <ol>
-            {% for roupa in Roupas %}
+            {% for roupas in Roupa %}
             <li>
-                <p>{{ roupa.tamanho }} - {{ roupa.preco }} - {{ roupa.cor }}</p>
+                <p>{{ roupa.idroupa }} - {{ roupa.Tamanho }} - {{ roupa.Preco }} - {{ roupa.Cor }}</p>
             </li>
             {% endfor %}
         </ol>

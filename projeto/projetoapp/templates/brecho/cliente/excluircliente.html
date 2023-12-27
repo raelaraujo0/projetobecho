@@ -6,18 +6,18 @@
     <title>Excluir cliente</title>
 </head>
 <body>
-    {% extends 'brecho/base.html' %}
-    {% block content %}
-    <h2>Opções de Exclusão de Cliente</h2>
-    <p>Informe o ID do cliente que deseja excluir:</p>
-    <form method="post" action="{% url 'excluir_cliente' %}">
-        {% csrf_token %}
-        <label for="idcliente">ID do Cliente:</label>
-        <input type="number" name="idcliente" required>
-        <button type="submit">Excluir Cliente</button>
-    </form>
-    <a href="{% url 'home' %}">Cancelar</a>
-    {% endblock %}
+
+        {% block content %}
+        <h2>Opções de Exclusão de Cliente</h2>
+        <p>Informe o ID do cliente que deseja excluir:</p>
+        <form method="post" action="{% url 'excluir_cliente' %}">
+            {% csrf_token %}
+            <label for="idcliente">ID do Cliente:</label>
+            <input type="number" name="idcliente" required>
+            <button type="submit">Excluir Cliente</button>
+        </form>
+        <a href="{% url 'home' %}">Cancelar</a>
+        {% endblock %}
 
 </body>
 </html>

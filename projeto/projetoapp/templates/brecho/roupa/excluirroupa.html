@@ -6,17 +6,18 @@
     <title>Excluir roupa</title>
 </head>
 <body>
-    {% extends 'brecho/base.html' %}
-    {% block content %}
-    <h2>Confirmação de exclusão</h2>
-    <p>Você tem certeza que deseja excluir a roupa "{{ roupa.Tamanho }}"?</p>
-    
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Confirmar exclusão</button>
-    </form>
-    <a href="{% url 'home' %}">Cancelar</a>
-    {% endblock %}
+
+        {% block content %}
+        <h2>Opções de Exclusão de roupa</h2>
+        <p>Informe o ID da roupa que deseja excluir:</p>
+        <form method="post" action="{% url 'excluir_roupa' %}">
+            {% csrf_token %}
+            <label for="idroupa">ID do roupa:</label>
+            <input type="number" name="idroupa" required>
+            <button type="submit">Excluir Roupa</button>
+        </form>
+        <a href="{% url 'home' %}">Cancelar</a>
+        {% endblock %} 
 
 </body>
 </html>
