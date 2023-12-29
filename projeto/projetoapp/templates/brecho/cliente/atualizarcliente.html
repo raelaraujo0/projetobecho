@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Cliente</title>
+</head>
+<body>
+
+    {% block content %}
+    <h1>Atualizar cliente</h1>
+    <p>Digite o id do cliente que deseja atualizar:</p>
+    <form method="post" action="{% url 'atualizar_cliente' %}">
+        {% csrf_token %}
+        <label for="idcliente"> Id do cliente</label>
+        <input type="number" name="idcliente" required>
+        {{ form.as_p }}
+        <button type="submit">Atualizar Cliente</button>
+    </form>
+    <a href="{url 'home'}">Cancelar</a>
+    {% endblock %}
+
+</body>
+</html>
