@@ -20,7 +20,7 @@
         <ul>
             {% for cliente in clientes %}
             <li>
-                <p>{{ cliente.idcliente }} - {{ cliente.Nome }} - {{ cliente.DataVenda }}</p>
+                <p>{{ cliente.idcliente }} - {{ cliente.Nome }} - {{ cliente.DataVenda }} - {{ cliente.LinkTel }} - {{ cliente.roupa_comprada}} </p>
             </li>
             {% endfor %}
         </ul>
@@ -29,7 +29,7 @@
         <ul>
             {% for roupa in roupas %}
             <li>
-                <p>{{ roupa.idroupa }} - {{ roupa.Tamanho }} - {{ roupa.Preco }} - {{ roupa.Cor }}</p>
+                <p>{{ roupa.idroupa }} - {{ roupa.Tamanho }} - {{ roupa.Preco }} - {{ roupa.Cor }} - {{ roupa.Categoria }}</p>
             </li>
             {% endfor %}
         </ul>

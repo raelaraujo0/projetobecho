@@ -25,11 +25,15 @@
             <label for="Nome">Nome:</label>
             {{ form.Nome }}
             <label for="DataVenda">Data da venda:</label>
-            {{ form.DataVenda }} 
+            <input type="date" name="DataVenda">
+            
+            <label for="roupa_comprada"> Roupa Comprada:</label>
+            {{ form.roupa_comprada }} <br>
+
             <label for="LinkTel"> Link ou Telefone:</label>
             {{ form.LinkTel }} <br>
 
-        <div class="concluir"></div>
+        <div class="concluir">
             <button type="submit">Concluir</button>
         </div>
         

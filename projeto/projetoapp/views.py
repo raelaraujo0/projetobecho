@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
 from .forms import ClienteForm, RoupaForm
 from .models import Cliente, Roupa
 
@@ -77,18 +77,17 @@ def excluir_roupa(request):
     return render(request, 'brecho/roupa/excluirroupa.html')
 
 def atualizar_roupa(request):
+    form = None
     roupa = None
+
     if request.method == 'POST':
         idroupa = request.POST.get('idroupa')
         roupa = get_object_or_404(Roupa, pk=idroupa)
-        form = Roupa(request.POST, instance=roupa)
+        form = RoupaForm(request.POST or None, instance=roupa)
+
         if form.is_valid():
             form.save()
             messages.success(request, 'Roupa atualizada com sucesso')
-            return redirect('atualizar_roupa')
-
-    else:
-        form = RoupaForm(instance=roupa)
 
     return render(request, 'brecho/roupa/atualizarroupa.html', {'form': form, 'roupa': roupa})
 

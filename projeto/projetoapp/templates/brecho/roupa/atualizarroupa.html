@@ -14,7 +14,6 @@
     <p>Digite o id da roupa que deseja atualizar:</p>
     <form method="post" action="{% url 'atualizar_roupa' %}">
         {% csrf_token %}
-        <label for="idroupa"> Id da roupa</label>
         <input type="number", name="idroupa" required>
         {{ form.as_p }}
 
