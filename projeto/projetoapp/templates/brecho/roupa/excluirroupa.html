@@ -1,8 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>Excluir roupa</title>
 </head>
 <body>
@@ -15,6 +18,15 @@
             <label for="idroupa">ID da roupa:</label>
             <input type="number" name="idroupa" required>
             <button type="submit">Excluir Roupa</button>
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
         </form>
         <a href="{% url 'home' %}">Cancelar</a>
         {% endblock %} 

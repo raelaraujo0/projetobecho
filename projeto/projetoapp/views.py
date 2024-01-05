@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from .forms import ClienteForm, RoupaForm
 from .models import Cliente, Roupa
@@ -20,6 +20,7 @@ def criar_cliente(request):
         form = ClienteForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Cliente criado com sucesso')
             return redirect('criar_cliente')
     else:
         form = ClienteForm()
@@ -31,7 +32,8 @@ def excluir_cliente(request):
         idcliente = request.POST.get('idcliente')
         cliente = get_object_or_404(Cliente, pk=idcliente)
         cliente.delete()
-        return HttpResponse({'message': 'Cliente excluído'})
+        messages.success(request, 'Cliente deletado com sucesso')
+        return redirect('excluir_cliente')
     
     return render(request, 'brecho/cliente/excluircliente.html')
 
@@ -43,7 +45,7 @@ def atualizar_cliente(request):
         form = Cliente(request.POST, instance=cliente)
         if form.is_valid():
             form.save()
-            return HttpResponse({'message': 'Cliente atualizado'})
+            messages.success(request, 'Cliente atualizado com sucesso')
         return redirect('atualizar_cliente')
     else:
         form = ClienteForm(instance=cliente)
@@ -57,6 +59,7 @@ def criar_roupa(request):
         form = RoupaForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Roupa criada com sucesso')
             return redirect('criar_roupa')
     else:
         form = RoupaForm()
@@ -68,7 +71,8 @@ def excluir_roupa(request):
         idroupa = request.POST.get('idroupa')
         roupa = get_object_or_404(Roupa, pk=idroupa)
         roupa.delete()
-        return HttpResponse({'message': 'Roupa excluida'})
+        messages.success(request, 'Roupa deletada com sucesso')
+        return redirect('excluir_roupa')
     
     return render(request, 'brecho/roupa/excluirroupa.html')
 
@@ -80,8 +84,9 @@ def atualizar_roupa(request):
         form = Roupa(request.POST, instance=roupa)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Roupa atualizada com sucesso')
             return redirect('atualizar_roupa')
-        return HttpResponse({'message': 'Roupa atualizada'})
+
     else:
         form = RoupaForm(instance=roupa)
 

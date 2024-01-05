@@ -1,11 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>Atualizar Cliente</title>
 </head>
+
 <body>
 
     {% block content %}
@@ -14,12 +17,29 @@
     <form method="post" action="{% url 'atualizar_cliente' %}">
         {% csrf_token %}
         <label for="idcliente"> Id do cliente</label>
-        <input type="number" name="idcliente" required>
-        {{ form.as_p }}
+        <input type="number" name="idcliente" required> <br>
+
+        <label for="Nome">Nome:</label>
+            {{ form.Nome }} <br>
+            <label for="DataVenda">Data da venda: </label>
+            {{ form.DataVenda }} <br>
+            <label for="LinkTel"> Link ou Telefone:</label>
+            {{ form.LinkTel }} <br>
+
         <button type="submit">Atualizar Cliente</button>
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+
     </form>
     <a href="{url 'home'}">Cancelar</a>
     {% endblock %}
 
 </body>
+
 </html>

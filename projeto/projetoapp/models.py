@@ -4,6 +4,7 @@ class Cliente(models.Model):
     idcliente = models.AutoField(primary_key=True)
     Nome = models.CharField(max_length = 50)
     DataVenda = models.DateField(null=True)
+    LinkTel = models.CharField(max_length = 30)
 
     def __str__(self):
         return self.clientes

@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/pags.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>Cliente</title>
 </head>
 
@@ -24,10 +25,22 @@
             <label for="Nome">Nome:</label>
             {{ form.Nome }}
             <label for="DataVenda">Data da venda:</label>
-            {{ form.DataVenda }} <br>
+            {{ form.DataVenda }} 
+            <label for="LinkTel"> Link ou Telefone:</label>
+            {{ form.LinkTel }} <br>
             <button type="submit">Concluir</button>
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
         </div>
     </form>
 
 </body>
+
 </html>
