@@ -1,5 +1,5 @@
 from django import forms
-from .models import Cliente, Roupa, Tamanho
+from .models import Cliente, Roupa
 
 class ClienteForm(forms.ModelForm):
     class Meta:
@@ -9,9 +9,4 @@ class ClienteForm(forms.ModelForm):
 class RoupaForm(forms.ModelForm):
     class Meta:
         model = Roupa
-        fields = ['tamanhos', 'Preco', 'Cor', 'Categoria']
-
-    tamanhos = forms.ModelMultipleChoiceField(
-        queryset=Tamanho.objects.all(),
-        widget=forms.CheckboxSelectMultiple
-    )
+        fields = ['Tamanho', 'Preco', 'Cor', 'Categoria']

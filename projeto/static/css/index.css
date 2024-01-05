@@ -1,4 +1,4 @@
-.ini a {
+.inicio a {
     display: block; 
     padding: 20px 48.5%;
     background-color: #848484;
@@ -16,8 +16,8 @@ html, body {
     text-decoration: none;
     display: block;
     width: 200px;
-    padding: 15px;
-    margin: 15px auto;
+    padding: 35px;
+    margin: 35px auto;
     background-color: #848488;
     color: white;
     border: none;
@@ -55,4 +55,8 @@ html, body {
 .concluir button:hover {
     background-color:forestgreen;
     color: white;
+}
+
+.listagem {
+    text-align: center;
 }

@@ -6,16 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pags.css' %}">
     <title>Excluir cliente</title>
 </head>
 <body>
+    <header>
+        <nav class="inicio">
+            <a href="{% url 'home' %}">Inicio</a>
+        </nav>
+    </header>
 
         {% block content %}
-        <h2>Opções de Exclusão de Cliente</h2>
-        <p>Informe o ID do cliente que deseja excluir:</p>
+        <h2>Exclusão de Cliente</h2>
         <form method="post" action="{% url 'excluir_cliente' %}">
             {% csrf_token %}
-            <label for="idcliente">ID do Cliente:</label>
+            <label for="idcliente">ID do Cliente que deseja deletar: <br>:</label>
             <input type="number" name="idcliente" required>
 
         <div class="concluir">
@@ -31,7 +36,6 @@
             {% endif %}
 
         </form>
-        <a href="{% url 'home' %}">Cancelar</a>
         {% endblock %}
 
 </body>

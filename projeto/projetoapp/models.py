@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 class Cliente(models.Model):
     idcliente = models.AutoField(primary_key=True)
@@ -10,16 +11,10 @@ class Cliente(models.Model):
     def __str__(self):
         return self.clientes
 
-class Tamanho(models.Model):
-    nome = models.CharField(max_length=5, unique=True)
-
-    def __str__(self):
-        return self.nome
-
 class Roupa(models.Model):
     idroupa = models.AutoField(primary_key = True)
-    tamanhos = models.ManyToManyField(Tamanho)
-    Preco = models.FloatField(null=True)
+    Tamanho = models.CharField(max_length=4)
+    Preco = models.DecimalField(max_digits =10, decimal_places=2, null=True, validators=[MinValueValidator(0)])
     Categoria = models.CharField(max_length = 20, null = True)
     Cor = models.CharField(max_length = 15, null=True)
 
