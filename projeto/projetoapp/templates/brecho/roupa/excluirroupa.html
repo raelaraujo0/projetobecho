@@ -17,8 +17,11 @@
             {% csrf_token %}
             <label for="idroupa">ID da roupa:</label>
             <input type="number" name="idroupa" required>
-            <button type="submit">Excluir Roupa</button>
 
+        <div class="concluir">
+            <button type="submit">Excluir Roupa</button>
+        </div>
+        
             {% if messages %}
             <ul class="messages">
                 {% for message in messages %}

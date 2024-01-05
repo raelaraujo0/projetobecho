@@ -28,8 +28,11 @@
             {{ form.DataVenda }} 
             <label for="LinkTel"> Link ou Telefone:</label>
             {{ form.LinkTel }} <br>
-            <button type="submit">Concluir</button>
 
+        <div class="concluir"></div>
+            <button type="submit">Concluir</button>
+        </div>
+        
             {% if messages %}
             <ul class="messages">
                 {% for message in messages %}

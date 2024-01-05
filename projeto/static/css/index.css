@@ -1,6 +1,6 @@
 .ini a {
     display: block; 
-    padding: 20px 50%;
+    padding: 20px 48.5%;
     background-color: #848484;
     text-decoration: none;
     color: black; 
@@ -46,3 +46,13 @@ html, body {
     color: green;
 }
 
+.concluir button {
+    border-radius: 5px;
+    background-color:forestgreen;
+    color: white;
+}
+
+.concluir button:hover {
+    background-color:forestgreen;
+    color: white;
+}

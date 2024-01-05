@@ -17,7 +17,10 @@
         <label for="idroupa"> Id da roupa</label>
         <input type="number", name="idroupa" required>
         {{ form.as_p }}
+
+    <div class="concluir">
         <button type="submit">Atualizar roupa</button>
+    </div>
 
         {% if messages %}
         <ul class="messages">
@@ -28,7 +31,7 @@
         {% endif %}
 
     </form>
-    <a href="{url 'home'}">Cancelar</a>
+    <a href="{%url 'home'%}">Cancelar</a>
     {% endblock %}
 </body>
 </html>

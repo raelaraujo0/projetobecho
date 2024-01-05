@@ -17,7 +17,10 @@
             {% csrf_token %}
             <label for="idcliente">ID do Cliente:</label>
             <input type="number" name="idcliente" required>
+
+        <div class="concluir">
             <button type="submit">Excluir Cliente</button>
+        </div>
 
             {% if messages %}
             <ul class="messages">
