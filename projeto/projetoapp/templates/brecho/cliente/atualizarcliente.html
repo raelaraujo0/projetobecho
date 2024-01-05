@@ -17,35 +17,37 @@
         </nav>
     </header>
 
-    {% block content %}
-    <h1>Atualizar cliente</h1>
-    <form method="post" action="{% url 'atualizar_cliente' %}">
-        {% csrf_token %}
-        <label for="idcliente"> Id do cliente que deseja atualizar: <br></label>
-        <input type="number" name="idcliente" required> <br>
+    <div class="attdel">
+        {% block content %}
+        <h1>Atualizar cliente</h1>
+        <form method="post" action="{% url 'atualizar_cliente' %}">
+            {% csrf_token %}
+            <label for="idcliente"> Id do cliente que deseja atualizar: <br></label>
+            <input type="number" name="idcliente" required> <br>
 
-        <label for="Nome">Nome:</label>
+            <label for="Nome">Nome:</label>
             {{ form.Nome }} <br>
             <label for="DataVenda">Data da venda: </label>
             <input type="date" name="DataVenda"><br>
-            
+
             <label for="LinkTel"> Link ou Telefone:</label>
             {{ form.LinkTel }} <br>
-    
-    <div class="concluir">
-        <button type="submit">Atualizar Cliente</button>
+
+            <div class="concluir">
+                <button type="submit">Atualizar Cliente</button>
+            </div>
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+        </form>
+        {% endblock %}
     </div>
-
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-        </ul>
-        {% endif %}
-
-    </form>
-    {% endblock %}
 
 </body>
 </html>

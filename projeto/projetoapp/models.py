@@ -9,7 +9,8 @@ class Cliente(models.Model):
     roupa_comprada = models.ManyToManyField('Roupa', blank = True)
 
     def __str__(self):
-        return self.clientes
+        roupas_compradas = ", ".join([str(roupa) for roupa in self.roupa_comprada.all()])
+        return self.Nome
 
 class Roupa(models.Model):
     idroupa = models.AutoField(primary_key = True)
@@ -20,4 +21,4 @@ class Roupa(models.Model):
 
     
     def __str__(self):
-        return self.roupas
+        return f"Categoria: {self.Categoria}, ID: {self.idroupa}, Cor: {self.Cor}, Tamanho: {self.Tamanho}, Preco: {self.Preco}"

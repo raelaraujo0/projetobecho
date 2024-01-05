@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/pags.css' %}">
     <title>Atualizar Roupa</title>
 </head>
+
 <body>
     <header>
         <nav class="inicio">
@@ -16,27 +18,30 @@
         </nav>
     </header>
 
-    {% block content %}
-    <h1>Atualizar roupa</h1>
-    <p>Digite o id da roupa que deseja atualizar:</p>
-    <form method="post" action="{% url 'atualizar_roupa' %}">
-        {% csrf_token %}
-        <input type="number", name="idroupa" required>
-        {{ form.as_p }}
+    <div class="attdel">
+        {% block content %}
+        <h1>Atualizar roupa</h1>
+        <p>Digite o id da roupa que deseja atualizar:</p>
+        <form method="post" action="{% url 'atualizar_roupa' %}">
+            {% csrf_token %}
+            <input type="number" , name="idroupa" required>
+            {{ form.as_p }}
 
-    <div class="concluir">
-        <button type="submit">Atualizar roupa</button>
+            <div class="concluir">
+                <button type="submit">Atualizar roupa</button>
+            </div>
+
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+        </form>
+        {% endblock %}
     </div>
-
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-        </ul>
-        {% endif %}
-
-    </form>
-    {% endblock %}
 </body>
+
 </html>

@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/pags.css' %}">
     <title>Excluir cliente</title>
 </head>
+
 <body>
     <header>
         <nav class="inicio">
@@ -16,6 +18,7 @@
         </nav>
     </header>
 
+    <div class="attdel">
         {% block content %}
         <h2>Exclusão de Cliente</h2>
         <form method="post" action="{% url 'excluir_cliente' %}">
@@ -23,9 +26,9 @@
             <label for="idcliente">ID do Cliente que deseja deletar: <br>:</label>
             <input type="number" name="idcliente" required>
 
-        <div class="concluir">
-            <button type="submit">Excluir Cliente</button>
-        </div>
+            <div class="concluir">
+                <button type="submit">Excluir Cliente</button>
+            </div>
 
             {% if messages %}
             <ul class="messages">
@@ -37,6 +40,7 @@
 
         </form>
         {% endblock %}
+    </div>
 
 </body>
 </html>
