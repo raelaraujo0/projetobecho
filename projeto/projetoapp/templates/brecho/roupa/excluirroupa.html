@@ -20,10 +20,10 @@
 
     <div class="attdel">
         {% block content %}
-        <h2>Exclusão de roupa</h2>
+        <h1>Exclusão de roupa</h1> <br>
         <form method="post" action="{% url 'excluir_roupa' %}">
             {% csrf_token %}
-            <label for="idroupa">ID da roupa que deseja excluir: <br></label>
+            <label for="idroupa"> <br> ID da roupa que deseja excluir: <br></label>
             <input type="number" name="idroupa" required>
 
             <div class="concluir">

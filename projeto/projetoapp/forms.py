@@ -1,12 +1,17 @@
 from django import forms
-from .models import Cliente, Roupa
+from .models import Cliente, Roupa, Venda
 
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ['Nome', 'DataVenda', 'LinkTel', 'roupa_comprada']
+        fields = ['Nome', 'LinkTel']
 
 class RoupaForm(forms.ModelForm):
     class Meta:
         model = Roupa
         fields = ['Tamanho', 'Preco', 'Cor', 'Categoria']
+
+class VendaForm(forms.ModelForm):
+    class Meta:
+        model = Venda
+        fields = ['DataVenda','cliente_comprou' ,'roupa_comprada']

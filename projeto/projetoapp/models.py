@@ -4,13 +4,10 @@ from django.core.validators import MinValueValidator
 class Cliente(models.Model):
     idcliente = models.AutoField(primary_key=True)
     Nome = models.CharField(max_length = 50)
-    DataVenda = models.DateField(null=True)
     LinkTel = models.CharField(max_length = 30)
-    roupa_comprada = models.ManyToManyField('Roupa', blank = True)
 
     def __str__(self):
-        roupas_compradas = ", ".join([str(roupa) for roupa in self.roupa_comprada.all()])
-        return self.Nome
+        return f"Id: {self.idcliente}, Nome:  {self.Nome}, Link/Tel: {self.LinkTel}"
 
 class Roupa(models.Model):
     idroupa = models.AutoField(primary_key = True)
@@ -22,3 +19,14 @@ class Roupa(models.Model):
     
     def __str__(self):
         return f"Categoria: {self.Categoria}, ID: {self.idroupa}, Cor: {self.Cor}, Tamanho: {self.Tamanho}, Preco: {self.Preco}"
+
+class Venda(models.Model):
+    idvenda = models.AutoField(primary_key= True)
+    roupa_comprada = models.ManyToManyField('Roupa', blank = True)
+    cliente_comprou = models.ManyToManyField('Cliente', blank= True)
+    DataVenda = models.DateField(null=True)
+
+    def __str__(self):
+        clientes_comprou = ", ".join([str(cliente) for cliente in self.cliente_comprou.all()])
+        roupas_compradas = ", ".join([str(roupa) for roupa in self.roupa_comprada.all()])
+        return self.vendas

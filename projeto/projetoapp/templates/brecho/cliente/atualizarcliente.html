@@ -22,13 +22,11 @@
         <h1>Atualizar cliente</h1>
         <form method="post" action="{% url 'atualizar_cliente' %}">
             {% csrf_token %}
-            <label for="idcliente"> Id do cliente que deseja atualizar: <br></label>
+            <label for="idcliente"> Id do cliente que deseja atualizar:</label>
             <input type="number" name="idcliente" required> <br>
 
             <label for="Nome">Nome:</label>
             {{ form.Nome }} <br>
-            <label for="DataVenda">Data da venda: </label>
-            <input type="date" name="DataVenda"><br>
 
             <label for="LinkTel"> Link ou Telefone:</label>
             {{ form.LinkTel }} <br>

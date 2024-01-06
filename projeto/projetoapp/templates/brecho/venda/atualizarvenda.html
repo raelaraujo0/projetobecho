@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/pags.css' %}">
-    <title>Excluir cliente</title>
+    <title>Atualizar venda</title>
 </head>
 
 <body>
@@ -20,14 +19,24 @@
 
     <div class="attdel">
         {% block content %}
-        <form method="post" action="{% url 'excluir_cliente' %}">
-            <h1>Exclusão de Cliente</h1> <br>
+        <h1>Atualizar Venda</h1>
+        <form action="{% url 'atualizar_venda' %}" method="post">
             {% csrf_token %}
-            <label for="idcliente">ID do Cliente que deseja deletar: <br></label>
-            <input type="number" name="idcliente" required>
+            <label for="idvenda">Id da venda que deseja atualizar:</label>
+            <input type="number" name="idvenda" required> <br>
+
+            <label for="DataVenda">Data da venda:</label>
+            <input type="date" name="DataVenda">
+
+            <label for="cliente_comprou">Cliente que comprou:</label>
+            {{ form.cliente_comprou }} <br>
+
+            <label for="roupa_comprada"> Roupa Comprada:</label>
+            {{ form.roupa_comprada }} <br>
+
 
             <div class="concluir">
-                <button type="submit">Excluir Cliente</button>
+                <button type="submit">Atualizar Venda</button>
             </div>
 
             {% if messages %}
@@ -37,10 +46,10 @@
                     {% endfor %}
             </ul>
             {% endif %}
-
         </form>
         {% endblock %}
     </div>
 
 </body>
+
 </html>

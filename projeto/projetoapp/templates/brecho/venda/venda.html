@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/pags.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Criar venda</title>
+</head>
+<body>
+    <header>
+        <nav class="inicio">
+            <a href="{% url 'home' %}">Inicio</a>
+        </nav>
+    </header>
+
+    <form action="{% url 'criar_venda' %}" method="post">
+        <div class="formulario">
+            <h1>Cadastrar Venda</h1> <br>
+            {% csrf_token %}
+            <label for="DataVenda">Data da venda:</label>
+            <input type="date" name="DataVenda">
+
+            <label for="cliente_comprou">Cliente que comprou:</label>
+            {{ form.cliente_comprou }} <br>
+
+            <label for="roupa_comprada"> Roupa Comprada:</label>
+            {{ form.roupa_comprada }} <br>
+
+        <div class="concluir">
+            <button type="submit">Concluir</button>
+        </div>
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+
+        </div>
+    </form>
+
+</body>
+</html>

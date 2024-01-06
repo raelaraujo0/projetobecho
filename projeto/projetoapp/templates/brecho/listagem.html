@@ -21,7 +21,7 @@
         <ul>
             {% for cliente in clientes %}
             <li>
-                <p>{{ cliente.idcliente }} - {{ cliente.Nome }} - {{ cliente.DataVenda }} - {{ cliente.LinkTel }} - {{ cliente.roupa_comprada}} </p>
+                <p>{{ cliente.idcliente }} - {{ cliente.Nome }} - {{ cliente.LinkTel }}</p>
             </li>
             {% endfor %}
         </ul>
@@ -34,6 +34,15 @@
             </li>
             {% endfor %}
         </ul>
+        
+        <h1>Listagem de vendas</h1>
+            <ul>
+                {% for venda in vendas %}
+                <li>
+                    <p>{{ venda.idvenda }} - {{ venda.DataVenda }} - {{ venda.cliente_comprou }} - {{ venda.roupa_comprada }}</p>
+                </li>
+                {% endfor %}
+            </ul>
     </div>
     
 </body>

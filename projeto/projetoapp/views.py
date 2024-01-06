@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
-from .forms import ClienteForm, RoupaForm
-from .models import Cliente, Roupa
+from .forms import ClienteForm, RoupaForm, VendaForm
+from .models import Cliente, Roupa, Venda
 
 def home(request):
     return render(request, 'brecho/home.html')
@@ -12,6 +12,9 @@ def opcoescli(request):
 
 def opcoesrou(request):
     return render(request, 'brecho/roupa/opcoesroupa.html')
+
+def opcoesven(request):
+    return render(request, 'brecho/venda/opcoesvendas.html')
 
 ## DIVISAO ENTRE HOME E MODULOS
 
@@ -32,7 +35,7 @@ def excluir_cliente(request):
         idcliente = request.POST.get('idcliente')
         cliente = get_object_or_404(Cliente, pk=idcliente)
         cliente.delete()
-        messages.success(request, 'Cliente deletado com sucesso')
+        messages.success(request, 'Cliente deletado')
         return redirect('excluir_cliente')
     
     return render(request, 'brecho/cliente/excluircliente.html')
@@ -71,7 +74,7 @@ def excluir_roupa(request):
         idroupa = request.POST.get('idroupa')
         roupa = get_object_or_404(Roupa, pk=idroupa)
         roupa.delete()
-        messages.success(request, 'Roupa deletada com sucesso')
+        messages.success(request, 'Roupa deletada')
         return redirect('excluir_roupa')
     
     return render(request, 'brecho/roupa/excluirroupa.html')
@@ -91,10 +94,49 @@ def atualizar_roupa(request):
 
     return render(request, 'brecho/roupa/atualizarroupa.html', {'form': form, 'roupa': roupa})
 
-######################
+## DIVISAO ENTRE ROUPAS E VENDAS
+
+def criar_venda(request):
+    if request.method == 'POST':
+        form = VendaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Venda registrada')
+            return redirect('criar_venda')
+    else:
+        form =VendaForm()
+
+    return render(request, 'brecho/venda/venda.html', {'form': form})
+
+def excluir_venda(request):
+    if request.method == 'POST':
+        idvenda = request.POST.get('idvenda')
+        venda = get_object_or_404(Venda, pk=idvenda)
+        venda.delete()
+        messages.success(request, 'Venda deletada')
+    
+    return render(request, 'brecho/venda/excluirvenda.html')
+
+def atualizar_venda(request):
+    form = None
+    venda = None
+    
+    if request.method == 'POST':
+        idvenda = request.POST.get('idvenda')
+        venda = get_object_or_404(Venda, pk=idvenda)
+        form = VendaForm(request.POST or None, instance=venda)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Venda atualizada com sucesso')
+
+    return render(request, 'brecho/venda/atualizarvenda.html', {'form': form, 'venda': venda})
+
+###############
 
 def listartudo(request):
     clientes = Cliente.objects.all()
     roupas = Roupa.objects.all()
+    vendas = Venda.objects.all()
     
-    return render(request, 'brecho/listagem.html', {'clientes': clientes, 'roupas': roupas})
+    return render(request, 'brecho/listagem.html', {'clientes': clientes, 'roupas': roupas, 'vendas': vendas})

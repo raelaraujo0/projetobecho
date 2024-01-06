@@ -20,7 +20,7 @@
 
     <div class="attdel">
         {% block content %}
-        <h1>Atualizar roupa</h1>
+        <h1>Atualizar roupa</h1> <br>
         <p>Digite o id da roupa que deseja atualizar:</p>
         <form method="post" action="{% url 'atualizar_roupa' %}">
             {% csrf_token %}
