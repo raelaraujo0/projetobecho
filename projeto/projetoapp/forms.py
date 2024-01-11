@@ -9,7 +9,7 @@ class ClienteForm(forms.ModelForm):
 class RoupaForm(forms.ModelForm):
     class Meta:
         model = Roupa
-        fields = ['Tamanho', 'Preco', 'Cor', 'Categoria']
+        fields = ['Tamanho', 'Preco', 'Cor', 'Categoria', 'FotoRoupa']
 
 class VendaForm(forms.ModelForm):
     class Meta:
