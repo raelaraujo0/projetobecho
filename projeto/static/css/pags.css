@@ -1,13 +1,8 @@
 .formulario {
+    display:block;
     color: #848484;
     text-align: center;
     padding: 20px;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
 }
 
 .formulario label {
@@ -15,10 +10,9 @@ body, html {
     margin-bottom: 10px;
 }
 
-
 .attdel {
-    display: flex;
+    display: block;
+    align-items: center;    
     width: 50%;
     height: 100vh;
-    align-items: center;    
 }
