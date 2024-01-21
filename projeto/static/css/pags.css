@@ -1,18 +1,23 @@
-.formulario {
+.formulario, .formulario label, .attdel 
+{
     display:block;
-    color: #848484;
-    text-align: center;
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.formulario label {
-    display: block;
+.formulario 
+{
+    color: #848484;
+    padding: 25px;
+}
+
+.formulario label 
+{
     margin-bottom: 10px;
 }
 
-.attdel {
-    display: block;
-    align-items: center;    
+.attdel 
+{
     width: 50%;
     height: 100vh;
 }

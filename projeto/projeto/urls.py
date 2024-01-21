@@ -15,7 +15,7 @@ urlpatterns = [
     ## CLIENTES
     path('cliente/', views.criar_cliente, name='criar_cliente'),
     path('cliente/excluir/', views.excluir_cliente, name='excluir_cliente'),
-    path('cliente/atualizar/', views.atualizar_cliente, name='atualizar_cliente'),
+    path('cliente/atualizar/<int:pk>/', views.atualizar_cliente, name='atualizar_cliente'),
 
     ## ROUPAS
     path('roupa/', views.criar_roupa, name='criar_roupa'),

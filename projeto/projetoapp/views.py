@@ -40,16 +40,15 @@ def excluir_cliente(request):
     
     return render(request, 'brecho/cliente/excluircliente.html')
 
-def atualizar_cliente(request):
-    cliente = None
+def atualizar_cliente(request, idcliente):
+    cliente = get_object_or_404(Cliente, pk=idcliente)
+
     if request.method == 'POST':
-        idcliente = request.POST.get('idcliente')
-        cliente = get_object_or_404(Cliente, pk=idcliente)
         form = Cliente(request.POST, instance=cliente)
         if form.is_valid():
             form.save()
             messages.success(request, 'Cliente atualizado com sucesso')
-        return redirect('atualizar_cliente')
+            return redirect('atualizar_cliente', pk=idcliente)
     else:
         form = ClienteForm(instance=cliente)
 
