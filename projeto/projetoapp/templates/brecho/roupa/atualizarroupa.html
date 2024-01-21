@@ -21,9 +21,10 @@
     <div class="attdel">
         {% block content %}
         <h1>Atualizar roupa</h1> <br>
-        <p>Digite o id da roupa que deseja atualizar:</p>
-        <form method="post" action="{% url 'atualizar_roupa' %}">
+        <p>Digite o ID da roupa que deseja atualizar:</p>
+        <form method="post" action="{% url 'atualizar_roupa' %}" enctype="multipart/form-data">
             {% csrf_token %}
+
             <input type="number" , name="idroupa" required>
             {{ form.as_p }}
 

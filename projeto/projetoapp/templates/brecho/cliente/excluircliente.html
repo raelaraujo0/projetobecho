@@ -20,11 +20,14 @@
 
     <div class="attdel">
         {% block content %}
+
         <form method="post" action="{% url 'excluir_cliente' %}">
             <h1>Exclusão de Cliente</h1> <br>
             {% csrf_token %}
-            <label for="idcliente">ID do Cliente que deseja deletar: <br></label>
+            </p>ID do Cliente que deseja deletar: <br><p></p>
+            
             <input type="number" name="idcliente" required>
+            {{ form.as_p }}
 
             <div class="concluir">
                 <button type="submit">Excluir Cliente</button>

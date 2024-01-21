@@ -16,7 +16,6 @@ def opcoesrou(request):
 def opcoesven(request):
     return render(request, 'brecho/venda/opcoesvendas.html')
 
-## DIVISAO ENTRE HOME E MODULOS
 
 def criar_cliente(request):
     if request.method == 'POST':
@@ -40,25 +39,25 @@ def excluir_cliente(request):
     
     return render(request, 'brecho/cliente/excluircliente.html')
 
-def atualizar_cliente(request, idcliente):
-    cliente = get_object_or_404(Cliente, pk=idcliente)
+def atualizar_cliente(request):
+    form = None
+    cliente = None
 
     if request.method == 'POST':
-        form = Cliente(request.POST, instance=cliente)
+        idcliente = request.POST.get('idcliente')
+        cliente = get_object_or_404(Cliente, pk=idcliente)
+        form = ClienteForm(request.POST or None, instance=cliente)
+
         if form.is_valid():
             form.save()
             messages.success(request, 'Cliente atualizado com sucesso')
-            return redirect('atualizar_cliente', pk=idcliente)
-    else:
-        form = ClienteForm(instance=cliente)
+            return redirect('atualizar_cliente')
 
     return render(request, 'brecho/cliente/atualizarcliente.html', {'form': form, 'cliente': cliente })  
 
-## DIVISAO ENTRE CLIENTES E ROUPAS
-
 def criar_roupa(request):
     if request.method == 'POST':
-        form = RoupaForm(request.POST)
+        form = RoupaForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Roupa criada com sucesso')
@@ -90,10 +89,9 @@ def atualizar_roupa(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Roupa atualizada com sucesso')
+            return redirect('atualizar_roupa')
 
     return render(request, 'brecho/roupa/atualizarroupa.html', {'form': form, 'roupa': roupa})
-
-## DIVISAO ENTRE ROUPAS E VENDAS
 
 def criar_venda(request):
     if request.method == 'POST':
@@ -113,6 +111,7 @@ def excluir_venda(request):
         venda = get_object_or_404(Venda, pk=idvenda)
         venda.delete()
         messages.success(request, 'Venda deletada')
+        return redirect('excluir_venda')
     
     return render(request, 'brecho/venda/excluirvenda.html')
 
@@ -130,8 +129,6 @@ def atualizar_venda(request):
             messages.success(request, 'Venda atualizada com sucesso')
 
     return render(request, 'brecho/venda/atualizarvenda.html', {'form': form, 'venda': venda})
-
-###############
 
 def listartudo(request):
     clientes = Cliente.objects.all()

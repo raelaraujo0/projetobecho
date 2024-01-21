@@ -18,22 +18,25 @@
         </nav>
     </header>
 
-    <form action="{% url 'criar_roupa' %}" method="post">
+    <form action="{% url 'criar_roupa' %}" method="post" enctype="multipart/form-data">
         <div class="formulario">
             <h1>Cadastrar Roupa</h1><br>
             {% csrf_token %}
+
             <label for="FotoRoupa">Foto da roupa:</label>
             {{ form.FotoRoupa }} <br>
 
             <label for="Tamanho">Tamanho:</label>
-            <input type="text" name="Tamanho">
+            {{ form.Tamanho }}
 
             <label for="Preco">Preço:</label>
             {{ form.Preco }}
+
             <label for="Cor">Cor:</label>
             {{ form.Cor }} <br>
+
             <label for="Categoria">Categoria</label>
-            <input type="text" name="Categoria">
+            {{ form.Categoria }}
 
         <div class="concluir">            
             <button type="submit">Concluir</button>

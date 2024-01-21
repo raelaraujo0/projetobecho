@@ -4,14 +4,14 @@ from .models import Cliente, Roupa, Venda
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ['Nome', 'LinkTel']
+        fields = ["idcliente", "Nome", "LinkTel"]
 
 class RoupaForm(forms.ModelForm):
     class Meta:
         model = Roupa
-        fields = ['Tamanho', 'Preco', 'Cor', 'Categoria', 'FotoRoupa']
+        fields = ["idroupa", "Tamanho", "Preco", "Cor", "Categoria", "FotoRoupa"]
 
 class VendaForm(forms.ModelForm):
     class Meta:
         model = Venda
-        fields = ['DataVenda','cliente_comprou' ,'roupa_comprada']
+        fields = ["idvenda", "DataVenda","cliente_comprou" ,"roupa_comprada"]
