@@ -29,7 +29,7 @@ def criar_cliente(request):
 
     return render(request, 'brecho/cliente/cliente.html', {'form': form})
     
-def excluir_cliente(request):
+def excluir_cliente(request, idcliente):
     if request.method == 'POST':
         idcliente = request.POST.get('idcliente')
         cliente = get_object_or_404(Cliente, pk=idcliente)
@@ -39,7 +39,7 @@ def excluir_cliente(request):
     
     return render(request, 'brecho/cliente/excluircliente.html')
 
-def atualizar_cliente(request):
+def atualizar_cliente(request, idcliente):
     form = None
     cliente = None
 
@@ -67,7 +67,7 @@ def criar_roupa(request):
 
     return render(request, 'brecho/roupa/roupa.html', {'form': form})
 
-def excluir_roupa(request):
+def excluir_roupa(request, idroupa):
     if request.method == 'POST':
         idroupa = request.POST.get('idroupa')
         roupa = get_object_or_404(Roupa, pk=idroupa)
@@ -77,7 +77,7 @@ def excluir_roupa(request):
     
     return render(request, 'brecho/roupa/excluirroupa.html')
 
-def atualizar_roupa(request):
+def atualizar_roupa(request, idroupa):
     form = None
     roupa = None
 
@@ -105,7 +105,7 @@ def criar_venda(request):
 
     return render(request, 'brecho/venda/venda.html', {'form': form})
 
-def excluir_venda(request):
+def excluir_venda(request, idvenda):
     if request.method == 'POST':
         idvenda = request.POST.get('idvenda')
         venda = get_object_or_404(Venda, pk=idvenda)
@@ -115,7 +115,7 @@ def excluir_venda(request):
     
     return render(request, 'brecho/venda/excluirvenda.html')
 
-def atualizar_venda(request):
+def atualizar_venda(request, idvenda):
     form = None
     venda = None
     

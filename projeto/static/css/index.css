@@ -1,18 +1,28 @@
 .inicio a 
 {
-    display: block; 
+    display: block;
     padding: 20px 48.5%;
-    background-color: #848484;
+    background-color: #333;
     text-decoration: none;
-    color: black; 
+    color: white; 
 }
 
-html, body 
-{
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: #0f1126;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
 }
 
 .clicavel button
@@ -56,7 +66,7 @@ html, body
 
 .concluir button 
 {
-    width: 50px;
+    width: 100px;
     margin-bottom: 10px;
     border-radius: 5px;
     background-color:green;
@@ -69,8 +79,41 @@ html, body
     color: white;
 }
 
-.listagem 
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.list-item {
+    width: calc(20% - 20px);
+    margin-bottom: 20px;
+    background-color: #1c1c1c;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.list-item:hover {
+    transform: scale(1.05);
+}
+
+.list-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.titulo-conteiner
 {
-    text-decoration: none;
     text-align: center;
+}
+
+h2, h4
+{
+    color: white;
 }

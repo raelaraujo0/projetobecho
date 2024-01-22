@@ -6,24 +6,13 @@
             <a href="{% url 'home' %}">Inicio</a>
         </div>
     </header>
-    
-    <div class="clicavel">
-        <button>
-            <a href="{% url 'opcaocli' %}">Cliente</a>
-        </button><br>
 
-        <button>
-            <a href="{% url 'opcoesrou' %}">Roupa</a>
-        </button><br>
+    <main>
+        <div class="list">
+            {% include 'brecho/partial/lisroupa.html' %}
+        </div>
+    </main>
 
-        <button>
-            <a href="{% url 'opcoesven' %}">Venda</a>
-        </button><br>
-
-        <button>
-            <a href="{% url 'listartudo' %}"> Listagens</a>
-        </button><br>
-    </div>
-
+        
 </body>
 </html>
