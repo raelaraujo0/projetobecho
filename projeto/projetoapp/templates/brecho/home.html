@@ -1,23 +1,12 @@
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/pags.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <title>Brecho</title>
-</head>
-
+{% include 'brecho/partial/head.html' %}
 <body>
     <header>
-        <nav class="inicio">
+        <div class="inicio">
             <a href="{% url 'home' %}">Inicio</a>
-        </nav>
+        </div>
     </header>
-
+    
     <div class="clicavel">
         <button>
             <a href="{% url 'opcaocli' %}">Cliente</a>
@@ -37,5 +26,4 @@
     </div>
 
 </body>
-
 </html>
