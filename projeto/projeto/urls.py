@@ -26,6 +26,4 @@ urlpatterns = [
     path('venda/', views.criar_venda, name='criar_venda'),
     path('venda/excluir/<int:idvenda>/', views.excluir_venda, name='excluir_venda'),
     path('venda/atualizar/<int:idvenda>/', views.atualizar_venda, name='atualizar_venda'),
-
-    path('listagem/', views.listartudo, name='listartudo'),
 ]
