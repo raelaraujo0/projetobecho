@@ -11,7 +11,7 @@ class Cliente(models.Model):
 
 class Roupa(models.Model):
     idroupa = models.AutoField(primary_key = True)
-    nomebrecho = models.CharField(max_length = 20)
+    nomebrecho = models.CharField(max_length = 20, null=True)  
     Tamanho = models.CharField(max_length=4)
     Preco = models.DecimalField(max_digits =10, decimal_places=2, null=True, validators=[MinValueValidator(0)])
     Categoria = models.CharField(max_length = 20, null = True)

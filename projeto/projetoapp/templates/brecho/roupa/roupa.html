@@ -12,6 +12,9 @@
             <h1>Cadastrar Roupa</h1><br>
             {% csrf_token %}
 
+            <label for="nomebrecho">Nome do brecho:</label>
+            {{ form.nomebrecho }}
+
             <label for="FotoRoupa">Foto da roupa:</label>
             {{ form.FotoRoupa }} <br>
 
