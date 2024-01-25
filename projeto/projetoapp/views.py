@@ -5,7 +5,8 @@ from .forms import ClienteForm, RoupaForm, VendaForm
 from .models import Cliente, Roupa, Venda
 
 def home(request):
-    return render(request, 'brecho/home.html')
+    roupas = Roupa.objects.all()
+    return render(request, 'brecho/home.html', {'roupas': roupas })
 
 def opcoescli(request):
     return render(request, 'brecho/cliente/opcoescliente.html')
@@ -129,10 +130,3 @@ def atualizar_venda(request, idvenda):
             messages.success(request, 'Venda atualizada com sucesso')
 
     return render(request, 'brecho/venda/atualizarvenda.html', {'form': form, 'venda': venda})
-
-def listartudo(request):
-    clientes = Cliente.objects.all()
-    roupas = Roupa.objects.all()
-    vendas = Venda.objects.all()
-    
-    return render(request, 'brecho/listagem.html', {'clientes': clientes, 'roupas': roupas, 'vendas': vendas})
