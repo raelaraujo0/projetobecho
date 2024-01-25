@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from projetoapp import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +28,4 @@ urlpatterns = [
     path('venda/', views.criar_venda, name='criar_venda'),
     path('venda/excluir/<int:idvenda>/', views.excluir_venda, name='excluir_venda'),
     path('venda/atualizar/<int:idvenda>/', views.atualizar_venda, name='atualizar_venda'),
-]
+] + static(settings.MEDIA_URL, document_ROOT=settings.MEDIA_ROOT)
