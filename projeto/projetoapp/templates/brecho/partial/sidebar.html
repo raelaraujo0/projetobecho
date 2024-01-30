@@ -1,0 +1,14 @@
+{% load static %}
+<div class="sidebar">
+    <div class="arrow" onclick="toggleSideBar()">
+        <img src="projeto/static/img/flecha.png">
+    </div>
+
+    <ul class="menu">
+        <li><a href="{% url 'opcoescli' %}">Cliente</a></li>
+        <li><a href="{% url 'opcoesrou' %}">Roupa</a></li>
+        <li><a href="{% url 'opcoesven' %}">Venda</a></li>
+    </ul>
+</div>
+
+<script src="script.js"></script>
