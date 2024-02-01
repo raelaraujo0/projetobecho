@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:'Courier New', Courier, monospace
+    font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 main {
@@ -17,7 +17,7 @@ main {
     width: 200px;
     padding: 35px;
     margin: 35px auto;
-    background-color: #848488;
+    background-color: #222222;
     color: white;
     border: none;
     border-radius: 8px;
@@ -27,8 +27,11 @@ main {
 
 .clicavel button:hover
 {
+    width: 210px;
+    height: 100px;
+    transition: 0.6s;
     text-decoration: none;
-    background-color: #848484;
+    background-color: rgb(246, 105, 253);
     color: white;
 }
 
@@ -69,6 +72,7 @@ main {
 }
 
 .list {
+    margin-left: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -109,13 +113,19 @@ h2, h4
 
 nav.menu {
     height: 100%;
-    width: 300px;
+    width: 80px;
     background-color: #222222;
     padding: 40px 0 40px 1%;
-    box-shadow: 2.5px 0 0 rgb(99, 255, 8);
+    box-shadow: 2.5px 0 0 rgb(246, 105, 253);
     position: fixed;
     top: 0;
     left: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+nav.menu:hover {
+    width: 250px;
 }
 
 .btnexpand  {
@@ -138,7 +148,7 @@ ul li.itemsmenu {
 }
 
 ul li.itemsmenu:hover {
-    background-color: rgb(99, 255, 8);
+    background-color: rgb(246, 105, 253);
 } 
 
 ul li.itemsmenu a {
@@ -156,4 +166,5 @@ ul li.itemsmenu a .texto {
 
 ul li.itemsmenu a .icone > i {
     font-size: 25px;
+    margin-left: 10px;
 }
