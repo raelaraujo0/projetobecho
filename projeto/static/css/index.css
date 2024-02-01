@@ -1,10 +1,8 @@
-body, html {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
+* {
     padding: 0;
-    height: 100%;
-    overflow:hidden;
-    background-color: #0f1126;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace
 }
 
 main {
@@ -35,6 +33,7 @@ main {
 }
 
 .clicavel button a {
+    color: white;
     text-decoration: none;
 }
 
@@ -106,4 +105,55 @@ main {
 h2, h4
 {
     color: white;
+}
+
+nav.menu {
+    height: 100%;
+    width: 300px;
+    background-color: #222222;
+    padding: 40px 0 40px 1%;
+    box-shadow: 2.5px 0 0 rgb(99, 255, 8);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.btnexpand  {
+    width: 100%;
+}
+.btnexpand > i {
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.itemsmenu {
+    transition: 0.6s;
+}
+
+ul li.itemsmenu:hover {
+    background-color: rgb(99, 255, 8);
+} 
+
+ul li.itemsmenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    line-height: 30px;
+}
+
+ul li.itemsmenu a .texto {
+    margin-left: 40px;
+}
+
+ul li.itemsmenu a .icone > i {
+    font-size: 25px;
 }

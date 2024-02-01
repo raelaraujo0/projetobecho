@@ -1,4 +1,5 @@
 {% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <nav class="menu">
 
@@ -10,28 +11,28 @@
         <li class="itemsmenu">
             <a href="{% url 'home' %}">
                 <span class="icone"><i class="bi bi-house-fill"></i></span>
-                <span class="link">Inicio</span>
+                <span class="texto">Inicio</span>
             </a>
         </li>
 
         <li class="itemsmenu">
             <a href="{% url 'opcoescli' %}">
                 <span class="icone"><i class="bi bi-person"></i></span>
-                <span class="link">Cliente</span>
+                <span class="texto">Cliente</span>
             </a>
         </li>
 
         <li class="itemsmenu">
             <a href="{% url 'opcoesrou' %}">
                 <span class="icone"><i class="bi bi-box-seam"></i></span>
-                <span class="link">Roupa</span>
+                <span class="texto">Roupa</span>
             </a>
         </li>
 
         <li class="itemsmenu">
             <a href="{% url 'opcoesven' %}">
                 <span class="icone"><i class="bi bi-wallet"></i></span>
-                <span class="link">Venda</span>
+                <span class="texto">Venda</span>
             </a>
         </li>
     </ul>
