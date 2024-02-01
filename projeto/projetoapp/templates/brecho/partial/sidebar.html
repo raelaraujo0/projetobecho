@@ -1,14 +1,39 @@
 {% load static %}
-<div class="sidebar">
-    <div class="arrow" onclick="toggleSideBar()">
-        <img src="projeto/static/img/flecha.png">
+
+<nav class="menu">
+
+    <div class="btnexpand">
+        <i class="bi bi-list-nested"></i>
     </div>
 
-    <ul class="menu">
-        <li><a href="{% url 'opcoescli' %}">Cliente</a></li>
-        <li><a href="{% url 'opcoesrou' %}">Roupa</a></li>
-        <li><a href="{% url 'opcoesven' %}">Venda</a></li>
-    </ul>
-</div>
+    <ul>
+        <li class="itemsmenu">
+            <a href="{% url 'home' %}">
+                <span class="icone"><i class="bi bi-house-fill"></i></span>
+                <span class="link">Inicio</span>
+            </a>
+        </li>
 
-<script src="script.js"></script>
+        <li class="itemsmenu">
+            <a href="{% url 'opcoescli' %}">
+                <span class="icone"><i class="bi bi-person"></i></span>
+                <span class="link">Cliente</span>
+            </a>
+        </li>
+
+        <li class="itemsmenu">
+            <a href="{% url 'opcoesrou' %}">
+                <span class="icone"><i class="bi bi-box-seam"></i></span>
+                <span class="link">Roupa</span>
+            </a>
+        </li>
+
+        <li class="itemsmenu">
+            <a href="{% url 'opcoesven' %}">
+                <span class="icone"><i class="bi bi-wallet"></i></span>
+                <span class="link">Venda</span>
+            </a>
+        </li>
+    </ul>
+
+</nav>
