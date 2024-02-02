@@ -3,18 +3,39 @@
 {% include 'brecho/partial/sidebar.html' %}
 <body>
 
-    <form action="{% url 'criar_venda' %}" method="post">
+    <div class="conteiner">
+        <div class="con-img">
+            <img src="{% static 'img/vendaform.svg' %}">
+        </div>
+
         <div class="formulario">
-            <h1>Cadastrar Venda</h1> <br>
-            {% csrf_token %}
-            <label for="DataVenda">Data da venda:</label>
-            <input type="date" name="DataVenda">
+            <form action="{% url 'criar_venda' %}" method="post">
+                {% csrf_token %}
+                <div class="formheader">
+                    <div class="titulo">
+                        <h1>Cadastrar Venda</h1>
+                    </div>
+                </div>
 
-            <label for="cliente_comprou">Cliente que comprou:</label>
-            {{ form.cliente_comprou }} <br>
+            <div class="entradas">
 
-            <label for="roupa_comprada"> Roupa Comprada:</label>
-            {{ form.roupa_comprada }} <br>
+                <div class="entradasbox">
+                    <label for="DataVenda">Data da venda:</label>
+                    <input type="date" name="DataVenda" required>
+                </div>
+
+                <div class="entradasbox">
+                    <label for="cliente_comprou">Cliente que comprou:</label>
+                    {{ form.roupa_comprada }}
+                </div>
+                
+                <div class="entradasbox">
+                    <label for="roupa_comprada"> Roupa Comprada:</label>
+                    {{ form.cliente_comprou }}
+                </div>
+
+            </div>
+
 
         <div class="concluir">
             <button type="submit">Concluir</button>
@@ -30,6 +51,7 @@
 
         </div>
     </form>
+    </div>
 
 </body>
 </html>

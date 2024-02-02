@@ -3,28 +3,53 @@
 {% include 'brecho/partial/sidebar.html' %}
 <body>
 
-    <form action="{% url 'criar_roupa' %}" method="post" enctype="multipart/form-data">
+    <div class="conteiner">
+        <div class="con-img">
+            <img src="{% static 'img/roupafront.svg' %}">
+        </div>
+        
+        
         <div class="formulario">
-            <h1>Cadastrar Roupa</h1><br>
-            {% csrf_token %}
+            <form action="{% url 'criar_roupa' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="formheader">
+                    <div class="titulo">
+                        <h1>Cadastrar Roupa</h1>
+                    </div>
+                </div>
 
-            <label for="nomebrecho">Nome do brecho:</label>
-            {{ form.nomebrecho }}
+        <div class="entradas">
+            <div class="entradasbox">
+                <label for="nomebrecho">Nome do brecho:</label>
+                <input id="nomebrecho" type="text" name="nomebrecho" placeholder="Digite o nome do seu brecho" required>
+            </div>
 
-            <label for="FotoRoupa">Foto da roupa:</label>
-            {{ form.FotoRoupa }} <br>
+            <div class="entradasbox">
+                <label for="FotoRoupa">Foto da roupa:</label>
+                <input id="foto" type="file" name="FotoRoupa" required>
+            </div>
 
-            <label for="Tamanho">Tamanho:</label>
-            {{ form.Tamanho }}
+            <div class="entradasbox">
+                <label for="Tamanho">Tamanho:</label>
+                <input id="tamanho" type="text" name="Tamanho" placeholder="PP/P/M/G/GG" required>
+            </div>
 
-            <label for="Preco">Preço:</label>
-            {{ form.Preco }}
+            <div class="entradasbox">
+                <label for="Preco">Preço:</label>
+                <input id="preco" type="number" placeholder="Ex: 10/25.50" required>
+            </div>
 
-            <label for="Cor">Cor:</label>
-            {{ form.Cor }} <br>
+            <div class="entradasbox">
+                <label for="Cor">Cor:</label>
+                <input id="cor" type="text" name="Cor" placeholder="Digite a cor da roupa" required>
+            </div>
 
-            <label for="Categoria">Categoria</label>
-            {{ form.Categoria }}
+            <div class="entradasbox">
+                <label for="Categoria">Categoria</label>
+                <input id="categoria" type="text" name="Categoria" placeholder="Ex: Jaqueta, camisa, short..." required>
+            </div>
+
+        </div>
 
         <div class="concluir">            
             <button type="submit">Concluir</button>
@@ -34,12 +59,12 @@
             <ul class="messages">
                 {% for message in messages %}
                 <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    {% endfor %}
+                {% endfor %}
             </ul>
             {% endif %}
-
-        </div>
-    </form>
+            
+        </form>
+    </div>
     
 </body>
 </html>

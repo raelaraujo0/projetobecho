@@ -3,8 +3,10 @@ from django.core.validators import MinValueValidator
 
 class Cliente(models.Model):
     idcliente = models.AutoField(primary_key=True)
-    Nome = models.CharField(max_length = 50)
-    LinkTel = models.CharField(max_length = 30)
+    PrimeiroNome = models.CharField(max_length = 15, blank=True)
+    SegundoNome = models.CharField(max_length = 15, blank=True)
+    Link = models.CharField(max_length = 100, null=True)
+    Tel = models.CharField(max_length = 12, null=True)
 
 class Roupa(models.Model):
     idroupa = models.AutoField(primary_key = True)

@@ -4,32 +4,57 @@
 
 <body>
 
-    <form action="{% url 'criar_cliente' %}" method="post">
-        <div class="formulario">
-            <h1>Cadastrar Cliente</h1><br>
-            {% csrf_token %}
-            
-            <label for="Nome">Nome:</label>
-            {{ form.Nome }}
-
-            <label for="LinkTel"> Link ou Telefone:</label>
-            {{ form.LinkTel }} <br>
-
-        <div class="concluir">
-            <button type="submit">Concluir</button>
+    <div class="conteiner">
+        <div class="con-img">
+            <img src="{% static 'img/clientefront.svg' %}">
         </div>
-        
+
+        <div class="formulario">
+            <form action="{% url 'criar_cliente' %}" method="post">
+                {% csrf_token %}
+                <div class="formheader">
+                    <div class="titulo">
+                        <h1>Cadastrar Cliente</h1>
+                    </div>
+                </div>
+
+            <div class="entradas">
+
+                <div class="entradasbox">
+                    <label for="Nome">Primeiro nome:</label>
+                    <input id="pNome" type="text" name="PrimeiroNome" placeholder="Digite o nome do cliente" required>
+                </div>
+                    
+                <div class="entradasbox">
+                    <label for="Nome">Segundo nome:</label>
+                    <input id="sNome" type="text" name="SegundoNome" placeholder="Digite o sobrenome do cliente" required>
+                </div>
+
+                <div class="entradasbox">
+                    <label for="LinkorTel"> Link ou Telefone:</label> <br>
+                    <input id="link" type="url" name="Link" placeholder="Digite a url do cliente"> <br>
+                    <input id="tel" type="tel" name="Tel" placeholder="(xx) xxxx-xxxx">
+                </div>
+
+            </div>
+            
+            <div class="concluir">
+                <button type="submit">Concluir</button>
+            </div>
+        </div>
+            
             {% if messages %}
             <ul class="messages">
                 {% for message in messages %}
                 <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                    {% endfor %}
+                {% endfor %}
             </ul>
             {% endif %}
-
-        </div>
+            
     </form>
 
+    </div>
+    
 </body>
 
 </html>

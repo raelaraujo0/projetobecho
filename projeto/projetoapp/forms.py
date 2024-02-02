@@ -5,8 +5,10 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = ["idcliente",
-                  "Nome",
-                  "LinkTel"]
+                  "PrimeiroNome",
+                  "SegundoNome",        
+                  "Link",
+                  "Tel"]
 
 class RoupaForm(forms.ModelForm):
     class Meta:

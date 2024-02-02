@@ -1,0 +1,63 @@
+body {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.conteiner{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.con-img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(249, 130, 255);
+}
+
+.con-img img {
+    width: 31rem;
+}
+
+.formulario {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formheader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.concluir {
+    display: flex;
+    align-items: center;
+}
+
+.concluir buttom {
+    border: 0;
+    background-color: rgb(222, 55, 255);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.concluir buttom:hover {
+    background-color: rgb(213, 5, 255)
+}
+
+.concluir buttom a {
+    text-decoration: 0;
+    font-weight: 300;
+    color: white;
+}
