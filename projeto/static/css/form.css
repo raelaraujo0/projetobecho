@@ -4,13 +4,14 @@ body {
     justify-content: center;
     display: flex;
     align-items: center;
+    background-color: rgb(171, 83, 253);
 }
 
 .conteiner{
     width: 80%;
     height: 80vh;
     display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+    box-shadow: 5px 5px 10px rgb(234, 129, 255);
 }
 
 .con-img {
@@ -19,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: rgb(249, 130, 255);
+    background-color: #833bff;
 }
 
 .con-img img {
@@ -32,6 +33,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #ffffff;
 }
 
 .formheader {
@@ -43,21 +45,50 @@ body {
 .concluir {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-.concluir buttom {
+.concluir button {
+    width: 100px;
+    height: 20px;
     border: 0;
     background-color: rgb(222, 55, 255);
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
 }
 
-.concluir buttom:hover {
+.concluir button:hover {
     background-color: rgb(213, 5, 255)
 }
 
-.concluir buttom a {
+.concluir button a {
     text-decoration: 0;
-    font-weight: 300;
-    color: white;
+    font-weight: 200;
+}
+
+.entradas {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.entradasbox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.entradasbox input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #00001c;
+}
+
+.entradasbox input:hover {
+    background-color: #d8d8d8;
 }
