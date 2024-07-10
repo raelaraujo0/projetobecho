@@ -9,9 +9,9 @@ urlpatterns = [
     path('', views.home, name='home'),
     ## HOME -> OPCOES
 
-    path('opcaoclientes/', views.opcoescli, name='opcoescli'),
-    path('opcaoroupas/', views.opcoesrou, name='opcoesrou'),
-    path('opcoesvendas/', views.opcoesven, name='opcoesven'),
+    path('opcaoclientes/', views.opcoesclientes, name='opcoescli'),
+    path('opcaoroupas/', views.opcoesroupas, name='opcoesrou'),
+    path('opcoesvendas/', views.opcoesvendas, name='opcoesven'),
     ## OPCOES -> CLIENTE/ROUPAS
 
     ## CLIENTES

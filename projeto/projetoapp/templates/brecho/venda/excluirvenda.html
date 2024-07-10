@@ -1,6 +1,7 @@
 {% load static %}
 {% include 'brecho/partial/head.html' %}
 {% include 'brecho/partial/sidebar.html' %}
+
 <body>
 
     <div class="attdel">
@@ -10,7 +11,7 @@
         {% csrf_token %}
 
         <label for="idvenda"> Id da venda que deseja deletar: <br></label>
-        <input type="number" name="idvenda" required>
+        <input type="number" name="idVenda" required>
 
         <div class="concluir">
             <button type="submit">Excluir Venda</button>

@@ -9,7 +9,7 @@
         <form method="post" action="{% url 'atualizar_roupa' %}" enctype="multipart/form-data">
             {% csrf_token %}
 
-            <input type="number" , name="idroupa" required>
+            <input type="number" , name="idRoupa" required>
             {{ form.as_p }}
 
             <div class="concluir">

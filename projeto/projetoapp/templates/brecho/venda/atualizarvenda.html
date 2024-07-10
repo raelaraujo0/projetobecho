@@ -9,16 +9,16 @@
         <form action="{% url 'atualizar_venda' %}" method="post">
             {% csrf_token %}
             <label for="idvenda">Id da venda que deseja atualizar:</label>
-            <input type="number" name="idvenda" required> <br>
+            <input type="number" name="idVenda" required> <br>
 
             <label for="DataVenda">Data da venda:</label>
-            <input type="date" name="DataVenda">
+            <input type="date" name="dataVenda">
 
-            <label for="cliente_comprou">Cliente que comprou:</label>
-            {{ form.cliente_comprou }} <br>
+            <label for="clienteComprou">Cliente que comprou:</label>
+            {{ form.clienteComprou }} <br>
 
-            <label for="roupa_comprada"> Roupa Comprada:</label>
-            {{ form.roupa_comprada }} <br>
+            <label for="roupaComprada"> Roupa Comprada:</label>
+            {{ form.roupaComprada }} <br>
 
 
             <div class="concluir">

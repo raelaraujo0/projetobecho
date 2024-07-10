@@ -8,13 +8,13 @@ def home(request):
     roupas = Roupa.objects.all()
     return render(request, 'brecho/home.html', {'roupas': roupas })
 
-def opcoescli(request):
+def opcoesclientes(request):
     return render(request, 'brecho/cliente/opcoescliente.html')
 
-def opcoesrou(request):
+def opcoesroupas(request):
     return render(request, 'brecho/roupa/opcoesroupa.html')
 
-def opcoesven(request):
+def opcoesvendas(request):
     return render(request, 'brecho/venda/opcoesvendas.html')
 
 
@@ -32,8 +32,8 @@ def criar_cliente(request):
     
 def excluir_cliente(request, idcliente):
     if request.method == 'POST':
-        idcliente = request.POST.get('idcliente')
         cliente = get_object_or_404(Cliente, pk=idcliente)
+        idcliente = request.POST.get('idcliente')
         cliente.delete()
         messages.success(request, 'Cliente deletado')
         return redirect('excluir_cliente')
