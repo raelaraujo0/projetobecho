@@ -23,5 +23,5 @@ class Venda(models.Model):
     dataVenda = models.DateField(null=True)
 
     def __str__(self):
-        clientes_comprou = ", ".join([str(cliente) for cliente in self.clienteComprou.all()])
-        roupas_compradas = ", ".join([str(roupa) for roupa in self.roupaComprada.all()])
+        clienteCompraram = ", ".join([str(cliente) for cliente in self.clienteComprou.all()])
+        roupasCompradas = ", ".join([str(roupa) for roupa in self.roupaComprada.all()])

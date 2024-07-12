@@ -30,23 +30,23 @@ def criar_cliente(request):
 
     return render(request, 'brecho/cliente/cliente.html', {'form': form})
     
-def excluir_cliente(request, idcliente):
+def excluir_cliente(request, idCliente):
     if request.method == 'POST':
-        cliente = get_object_or_404(Cliente, pk=idcliente)
-        idcliente = request.POST.get('idcliente')
+        cliente = get_object_or_404(Cliente, pk=idCliente)
+        idCliente = request.POST.get('idCliente')
         cliente.delete()
         messages.success(request, 'Cliente deletado')
         return redirect('excluir_cliente')
     
     return render(request, 'brecho/cliente/excluircliente.html')
 
-def atualizar_cliente(request, idcliente):
+def atualizar_cliente(request, idCliente):
     form = None
     cliente = None
 
     if request.method == 'POST':
-        idcliente = request.POST.get('idcliente')
-        cliente = get_object_or_404(Cliente, pk=idcliente)
+        idCliente = request.POST.get('idCliente')
+        cliente = get_object_or_404(Cliente, pk=idCliente)
         form = ClienteForm(request.POST or None, instance=cliente)
 
         if form.is_valid():
@@ -68,23 +68,23 @@ def criar_roupa(request):
 
     return render(request, 'brecho/roupa/roupa.html', {'form': form})
 
-def excluir_roupa(request, idroupa):
+def excluir_roupa(request, idRoupa):
     if request.method == 'POST':
-        idroupa = request.POST.get('idroupa')
-        roupa = get_object_or_404(Roupa, pk=idroupa)
+        idRoupa = request.POST.get('idRoupa')
+        roupa = get_object_or_404(Roupa, pk=idRoupa)
         roupa.delete()
         messages.success(request, 'Roupa deletada')
         return redirect('excluir_roupa')
     
     return render(request, 'brecho/roupa/excluirroupa.html')
 
-def atualizar_roupa(request, idroupa):
+def atualizar_roupa(request, idRoupa):
     form = None
     roupa = None
 
     if request.method == 'POST':
-        idroupa = request.POST.get('idroupa')
-        roupa = get_object_or_404(Roupa, pk=idroupa)
+        idRoupa = request.POST.get('idRoupa')
+        roupa = get_object_or_404(Roupa, pk=idRoupa)
         form = RoupaForm(request.POST or None, instance=roupa)
 
         if form.is_valid():
@@ -106,23 +106,23 @@ def criar_venda(request):
 
     return render(request, 'brecho/venda/venda.html', {'form': form})
 
-def excluir_venda(request, idvenda):
+def excluir_venda(request, idVenda):
     if request.method == 'POST':
-        idvenda = request.POST.get('idvenda')
-        venda = get_object_or_404(Venda, pk=idvenda)
+        idVenda = request.POST.get('idVenda')
+        venda = get_object_or_404(Venda, pk=idVenda)
         venda.delete()
         messages.success(request, 'Venda deletada')
         return redirect('excluir_venda')
     
     return render(request, 'brecho/venda/excluirvenda.html')
 
-def atualizar_venda(request, idvenda):
+def atualizar_venda(request, idVenda):
     form = None
     venda = None
     
     if request.method == 'POST':
-        idvenda = request.POST.get('idvenda')
-        venda = get_object_or_404(Venda, pk=idvenda)
+        idVenda = request.POST.get('idVenda')
+        venda = get_object_or_404(Venda, pk=idVenda)
         form = VendaForm(request.POST or None, instance=venda)
 
         if form.is_valid():
