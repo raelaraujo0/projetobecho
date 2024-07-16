@@ -68,7 +68,7 @@ def criar_roupa(request):
 
     return render(request, 'brecho/roupa/roupa.html', {'form': form})
 
-def excluir_roupa(request, idRoupa):
+def excluir_roupa(request):
     if request.method == 'POST':
         idRoupa = request.POST.get('idRoupa')
         roupa = get_object_or_404(Roupa, pk=idRoupa)
@@ -78,7 +78,7 @@ def excluir_roupa(request, idRoupa):
     
     return render(request, 'brecho/roupa/excluirroupa.html')
 
-def atualizar_roupa(request, idRoupa):
+def atualizar_roupa(request):
     form = None
     roupa = None
 
