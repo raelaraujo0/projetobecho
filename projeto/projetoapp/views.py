@@ -30,17 +30,17 @@ def criar_cliente(request):
 
     return render(request, 'brecho/cliente/cliente.html', {'form': form})
     
-def excluir_cliente(request, idCliente):
+def excluir_cliente(request):
     if request.method == 'POST':
-        cliente = get_object_or_404(Cliente, pk=idCliente)
         idCliente = request.POST.get('idCliente')
+        cliente = get_object_or_404(Cliente, pk=idCliente)
         cliente.delete()
         messages.success(request, 'Cliente deletado')
         return redirect('excluir_cliente')
     
     return render(request, 'brecho/cliente/excluircliente.html')
 
-def atualizar_cliente(request, idCliente):
+def atualizar_cliente(request):
     form = None
     cliente = None
 
