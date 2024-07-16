@@ -106,7 +106,7 @@ def criar_venda(request):
 
     return render(request, 'brecho/venda/venda.html', {'form': form})
 
-def excluir_venda(request, idVenda):
+def excluir_venda(request):
     if request.method == 'POST':
         idVenda = request.POST.get('idVenda')
         venda = get_object_or_404(Venda, pk=idVenda)
@@ -116,7 +116,7 @@ def excluir_venda(request, idVenda):
     
     return render(request, 'brecho/venda/excluirvenda.html')
 
-def atualizar_venda(request, idVenda):
+def atualizar_venda(request):
     form = None
     venda = None
     
