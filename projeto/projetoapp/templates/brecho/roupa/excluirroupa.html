@@ -9,7 +9,7 @@
         <form method="post" action="{% url 'excluir_roupa' %}">
             {% csrf_token %}
 
-            <label for="idroupa"> <br> ID da roupa que deseja excluir: <br></label>
+            <label for="idRoupa"> <br> ID da roupa que deseja excluir: <br></label>
             <input type="number" name="idRoupa" required>
 
             <div class="concluir">

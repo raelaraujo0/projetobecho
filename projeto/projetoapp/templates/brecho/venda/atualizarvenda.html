@@ -8,7 +8,7 @@
         <h1>Atualizar Venda</h1>
         <form action="{% url 'atualizar_venda' %}" method="post">
             {% csrf_token %}
-            <label for="idvenda">Id da venda que deseja atualizar:</label>
+            <label for="idVenda">Id da venda que deseja atualizar:</label>
             <input type="number" name="idVenda" required> <br>
 
             <label for="DataVenda">Data da venda:</label>
